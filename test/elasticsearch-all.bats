@@ -153,7 +153,7 @@ export_exposed_ports() {
   URL="$(python -c "import sys, json; print json.load(open('url'))['credentials'][0]['connection_url']")"
   popd
 
-  [[ "https://aptible:password@localhost:9200" = "$URL" ]]
+  [[ "https://aptible:password@localhost:9200/" = "$URL" ]]
 
   run curl -k --fail "$URL"
 }
